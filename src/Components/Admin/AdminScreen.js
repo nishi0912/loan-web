@@ -4,7 +4,7 @@ import { UserOutlined, BuildOutlined, HomeOutlined } from "@ant-design/icons";
 import "../../App.css";
 import { Route } from "react-router";
 import { history } from "../../Utils/history";
-import _ from 'lodash';
+import _ from "lodash";
 
 const { Content, Sider } = Layout;
 
@@ -18,13 +18,11 @@ const AdminScreen = (props) => {
     setTabKey(e.key);
     const route = _.lowerCase(e.key);
     history.push(`/admin/${route}`);
-};
+  };
 
   return (
     <Layout className="admin-layout">
-      <Sider 
-      collapsible="true"
-      className="admin-sider">
+      <Sider collapsible="true" className="admin-sider">
         <Menu
           theme="dark"
           breakpoint="lg"
@@ -38,22 +36,28 @@ const AdminScreen = (props) => {
           <Menu.Item
             key={"Builders"}
             title={"Hello"}
-            icon={
-                <BuildOutlined/>
+            icon={<BuildOutlined />}
+            className={
+              TabKey === "Builders" ? "admin-selected" : "admin-unselected"
             }
-            className={TabKey === "Builders" ? "admin-selected" : "admin-unselected"}
           >
             Builders
           </Menu.Item>
-          <Menu.Item key={"Properties"} icon={<HomeOutlined />}
-            className={TabKey === "Properties" ? "admin-selected" : "admin-unselected"}
+          <Menu.Item
+            key={"Properties"}
+            icon={<HomeOutlined />}
+            className={
+              TabKey === "Properties" ? "admin-selected" : "admin-unselected"
+            }
           >
-            Properties
+            Property
           </Menu.Item>
-          <Menu.Item 
-          key={"Users"} 
-          icon={<UserOutlined />}
-          className={TabKey === "Users" ? "admin-selected" : "admin-unselected"}
+          <Menu.Item
+            key={"Users"}
+            icon={<UserOutlined />}
+            className={
+              TabKey === "Users" ? "admin-selected" : "admin-unselected"
+            }
           >
             Users
           </Menu.Item>

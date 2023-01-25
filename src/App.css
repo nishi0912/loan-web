@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+@import '~antd/dist/antd.css';
+/* Themes */
+:root{
+  margin: 0 !important;
+  padding: 0 !important;
+  --primary-color:#1F232F !important;
+  --secondary-color: #FFFFFF !important;
+  --light-white: #9098B1 !important;
+  --matte-blue: #347AF0 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ----------------------- Admin side --------------------------- */
+
+/* Admin styling */
+.admin-layout .ant-layout{
+  background: var(--primary-color) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.admin-layout{
+  min-height: 100vh !important;
+}
+.admin-sider{
+  padding: 50px 0px !important;
+  background-color: #242E42 !important;
+}
+.admin-menu{
+  background-color: #242E42 !important;
+}
+.admin-contents{
+  padding: 50px 30px !important
+}
+.admin-selected{
+  color: var(--matte-blue) !important;
+  background-color: #1B2536 !important;
+  /* position: relative !important; */
+}
+.admin-selected::after{
+  content: "";
+  position: absolute !important;
+  background-color: red !important;
+  width: 50px !important;
+  height: 100px !important;
+  right: 0px !important;
+  top: 0px  !important;
+  left: 0px !important;
+  bottom: 0px !important;
+}
+.admin-unselected{
+color: var(--secondary-color) !important;
+}
+/* Buildings styling */
+.admin-building-title{
+  font-size: 36px !important;
+  color: var(--secondary-color) !important;
+  text-align: center !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
